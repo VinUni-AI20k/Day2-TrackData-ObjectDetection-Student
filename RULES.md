@@ -6,7 +6,8 @@
 - **Không** dùng AI hoặc mô hình tự động để vẽ box thay bạn (kể cả tính năng tự gán nhãn của CVAT). Nhãn v1 phải do
   bạn tự vẽ.
 - Phần CP1 tự viết. Nếu AI gợi ý code, bạn phải giải thích được từng dòng khi Coach hỏi.
-- Ghi công cụ AI đã dùng vào mục cuối báo cáo.
+- Không để AI viết phần phân tích lỗi CP4 hoặc giải thích CP5 thay bạn.
+- Ghi mọi công cụ AI đã dùng vào mục "Công cụ AI đã dùng" trong báo cáo, kể cả khi không dùng.
 
 ## Làm bài và liêm chính
 
