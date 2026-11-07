@@ -6,11 +6,11 @@ Kiểm tra ngày 07/11/2026.
 
 | Chủ đề | Nguồn | Ghi chú |
 |---|---|---|
-| Phiên bản CVAT | <https://github.com/cvat-ai/cvat/releases> | mới nhất `v2.82.0` (05/11/2026); changelog 2.75–2.82 không đổi xuất COCO/YOLO. Bài vẫn ghim `v2.74.1` đã chạy thử |
+| Phiên bản CVAT | <https://github.com/cvat-ai/cvat/releases> | bài ghim `v2.82.0` (05/11/2026), bản mới nhất; đã chạy thử 07/11/2026: xuất COCO 1.0 có `attributes.occluded`/`truncated`, YOLO giữ thứ tự lớp, `audit` PASS |
 | CVAT COCO 1.0 | <https://docs.cvat.ai/docs/dataset_management/formats/format-coco/> | `occluded` và thuộc tính tự đặt nằm trong `annotation.attributes` |
 | CVAT Ultralytics YOLO | <https://docs.cvat.ai/docs/dataset_management/formats/format-yolo-ultralytics/> | `data.yaml` (`names` dạng `0: car`) + `labels/<subset>/*.txt`; **không** xuất thuộc tính |
 | Lỗi `occluded` khi xuất COCO | <https://github.com/cvat-ai/cvat/issues/9091> | đã đóng 28/03/2025; bài vẫn kiểm bằng `audit` |
-| Cài CVAT | <https://docs.cvat.ai/docs/administration/community/basics/installation/> | image Docker chỉ có bản `amd64`; Mac Apple Silicon chạy qua giả lập |
+| Cài CVAT | <https://docs.cvat.ai/docs/administration/community/basics/installation/> | image Docker chỉ có bản `amd64`; Mac Apple Silicon cần `DOCKER_DEFAULT_PLATFORM=linux/amd64` rồi chạy qua giả lập |
 | CVAT Online (dự phòng) | <https://www.cvat.ai/pricing/cloud> | gói Free: 1 project, 3 task, 1 GB |
 | Định dạng YOLO | <https://docs.ultralytics.com/datasets/detect/> | `class xc yc w h`, chuẩn hóa 0–1 |
 | IoU, precision, recall, mAP | <https://docs.ultralytics.com/guides/yolo-performance-metrics/> | định nghĩa chỉ số |

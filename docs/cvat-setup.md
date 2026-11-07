@@ -1,8 +1,8 @@
 # Cài CVAT trước buổi học
 
-Lab Coach (người hướng dẫn thực hành) dùng CVAT Community phiên bản `v2.74.1` để cả lớp có cùng giao diện và
-cách xuất dữ liệu. Bản mới nhất lúc soạn bài là `v2.82.0` (05/11/2026). Changelog không đổi cách xuất COCO/YOLO, nhưng bản này chưa
-được chạy thử với bài — dùng `v2.74.1`.
+Lab Coach (người hướng dẫn thực hành) dùng CVAT Community phiên bản `v2.82.0` (05/11/2026) để cả lớp có cùng giao diện và
+cách xuất dữ liệu. Bản này đã được chạy thử với bài ngày 07/11/2026: nhập nhãn, gán `occluded`/`truncated`, xuất COCO 1.0 và
+Ultralytics YOLO, rồi `audit` cho kết quả PASS.
 Hoàn thành cài đặt trước buổi học.
 
 ## Kết quả cần có
@@ -46,7 +46,8 @@ Chỉ làm phần tương ứng với hệ điều hành của bạn. Không tr�
 
 1. Chọn ** → About This Mac (Giới thiệu về máy Mac này)** và xem máy dùng Apple Silicon hay Intel.
 2. Tải đúng bản [Docker Desktop cho macOS](https://www.docker.com/products/docker-desktop/). Với Apple Silicon:
-   CVAT chỉ có image `amd64`, nên Docker chạy qua giả lập — mở chậm hơn nhưng đủ cho 4 ảnh.
+   CVAT chỉ có image `amd64`, nên Docker chạy qua giả lập — mở chậm hơn nhưng đủ cho 4 ảnh. Ở bước 2 bên dưới
+   có thêm một lệnh riêng cho Apple Silicon.
 3. Mở tệp `Docker.dmg`, kéo Docker vào **Applications (Ứng dụng)** rồi mở Docker.
 4. Chọn **Use recommended settings (Dùng thiết lập được khuyên dùng)** và chờ Docker chạy xong.
 5. Mở **Terminal (Cửa sổ lệnh)** và chạy:
@@ -101,8 +102,17 @@ Tài liệu chính thức để xử lý lỗi cụ thể:
 
 Mở Ubuntu nếu dùng Windows; mở cửa sổ lệnh nếu dùng macOS hoặc Ubuntu. Chạy:
 
+Chỉ với Mac Apple Silicon: chạy lệnh này trước, trong cùng cửa sổ lệnh. Nếu thiếu, `docker compose pull` báo lỗi
+`no matching manifest for linux/arm64/v8`. Mở cửa sổ lệnh mới thì chạy lại lệnh này trước mọi lệnh `docker compose`.
+
 ```bash
-git clone --depth 1 --branch v2.74.1 https://github.com/cvat-ai/cvat.git cvat-day2
+export DOCKER_DEFAULT_PLATFORM=linux/amd64
+```
+
+Mọi máy:
+
+```bash
+git clone --depth 1 --branch v2.82.0 https://github.com/cvat-ai/cvat.git cvat-day2
 cd cvat-day2
 docker compose pull
 docker compose up -d
@@ -147,7 +157,7 @@ Không chạy `docker compose down -v`; tùy chọn `-v` có thể xóa tác v�
 
 ## Không chạy được CVAT trên máy: dùng CVAT Online
 
-Chỉ dùng khi Lab Coach đồng ý, vì CVAT Online chạy bản mới nhất, không phải `v2.74.1`.
+Chỉ dùng khi Lab Coach đồng ý, vì CVAT Online luôn chạy bản mới nhất, có thể khác `v2.82.0`.
 
 1. Mở <https://app.cvat.ai> và tạo tài khoản bằng email cá nhân của bạn.
 2. Làm theo [cvat-step-by-step.md](cvat-step-by-step.md) như bình thường: **1 project, 1 task chứa cả 4 ảnh**.
