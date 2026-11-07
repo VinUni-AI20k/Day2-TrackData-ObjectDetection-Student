@@ -1,0 +1,3 @@
+pillow>=10
+pyyaml>=6
+# Tùy chọn cho Bonus B3: ultralytics>=8.4
