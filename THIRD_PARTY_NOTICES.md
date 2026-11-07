@@ -32,6 +32,20 @@ triển khai mô hình với dữ liệu sở hữu riêng.
 
 ## Phạm vi phát hành
 
-Kho mã chưa có giấy phép tổng thể và đang để riêng tư. Không phát hành rộng kho mã, ảnh, nhãn đã tạo hoặc kết quả
-mô hình trước khi chủ sở hữu chương trình xác nhận quyền phân phối. Không đưa nhãn tham chiếu, trọng
-số mô hình, mật khẩu hoặc mã truy cập vào bài nộp. Bài nộp chỉ gồm bản xuất nhãn của chính học viên (không kèm ảnh).
+Kho mã này công khai. Phần do VinUni-AI20k soạn được cấp phép như sau:
+
+| Thành phần | Giấy phép |
+|---|---|
+| Mã nguồn: `src/*.py`, `src/tests/`, `.github/` | [MIT](LICENSE) |
+| Tài liệu: các tệp Markdown, `docs/`, `report/`, ảnh chụp màn hình trong `docs/assets/` | [CC BY 4.0](LICENSE-DOCS.md) |
+
+Hai giấy phép trên **không** áp dụng cho:
+
+- **Bốn ảnh giao thông** (`src/data/images/`, `src/data/day2-cvat-input.zip`): quyền sử dụng theo nguồn gốc ghi ở
+  mục đầu và trong `src/data/image-manifest.csv`. Vì chuỗi nguồn không truy nguyên được đầy đủ, chỉ dùng các ảnh
+  này cho bài học; không đưa vào tập dữ liệu hay sản phẩm khác.
+- **Dự đoán YOLO11n** (`src/data/model-predictions/yolo11n-predictions.json`): kết quả chạy mô hình Ultralytics; xem
+  mục Ultralytics.
+
+Không đưa nhãn tham chiếu, trọng số mô hình, mật khẩu hoặc mã truy cập vào bài nộp. Bài nộp chỉ gồm bản xuất nhãn của
+chính học viên (không kèm ảnh).

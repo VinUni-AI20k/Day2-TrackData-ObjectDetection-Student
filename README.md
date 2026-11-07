@@ -40,3 +40,8 @@ src/       mã kiểm tra, ảnh, dự đoán mô hình dựng sẵn, bài CP1
 docs/      hướng dẫn CVAT, quy tắc gán nhãn, kiến thức box/IoU/COCO/YOLO
 report/individual/MSSV_HoTen.md   mẫu báo cáo — đổi tên thành MSSV_HoTen của bạn
 ```
+
+## Giấy phép
+
+Mã nguồn theo [MIT](LICENSE); tài liệu theo [CC BY 4.0](LICENSE-DOCS.md). Ảnh giao thông và dự đoán YOLO11n không
+thuộc hai giấy phép này: xem [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
