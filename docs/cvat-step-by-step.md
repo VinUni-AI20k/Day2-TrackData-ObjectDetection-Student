@@ -19,6 +19,8 @@
 Thứ tự `car, truck, bus, van` quyết định mã lớp YOLO `0, 1, 2, 3`. Không đổi thứ tự.
 `occluded` là cờ có sẵn của mọi box trong CVAT nên không cần khai báo.
 
+Kết quả: tab **Constructor** hiện 4 nhãn theo đúng thứ tự `car, truck, bus, van`.
+
 ## 2. Tạo task
 
 1. Trong project: **+ → Create a new task**, tên `day2-v1`.
@@ -31,7 +33,7 @@ Thứ tự `car, truck, bus, van` quyết định mã lớp YOLO `0, 1, 2, 3`. K
 
 1. Chọn công cụ **Draw new rectangle** (phím `N`), chọn nhãn, kéo box sát xe.
 2. Ở danh sách **Objects** bên phải:
-   - bấm biểu tượng **occluded** (hoặc chọn box rồi nhấn `Q`) khi xe bị che;
+   - bấm biểu tượng **occluded** khi xe bị che;
    - tích **truncated** khi xe bị mép ảnh cắt.
 3. Sửa box: kéo các điểm góc; đổi nhãn bằng menu nhãn của object.
 4. Lưu thường xuyên: **Save** (`Ctrl+S`). Chuyển ảnh bằng `F` / `D`.
@@ -48,6 +50,8 @@ Lưu trước khi xuất. Từ trang task: **Actions → Export task dataset**.
 | 2 | `Ultralytics YOLO Detection 1.0` | tắt | `exports/yolo-v1.zip` |
 
 ![Hộp thoại xuất dữ liệu](assets/day2-e2e/cvat-export-controls-real.png)
+
+Kết quả: thư mục `exports/` có `coco-v1.zip` và `yolo-v1.zip`.
 
 Nếu không thấy tệp tải về: vào **Requests** (thanh trên) và bấm tải.
 Sau đó chạy `audit` theo [src/README.md](../src/README.md).

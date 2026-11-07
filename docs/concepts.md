@@ -56,5 +56,16 @@ Sai lớp được báo riêng (`class_agreement_on_matches`): box vẫn khớp 
 ## 4. Vì sao nhãn ảnh hưởng mô hình
 
 Khi chấm mô hình, nhãn là "đáp án". Nếu đáp án thiếu một xe, mô hình phát hiện đúng xe đó vẫn bị tính **FP**.
-Nếu đem nhãn đó đi huấn luyện, mô hình bị dạy rằng chỗ đó là nền. Box lỏng dạy mô hình vẽ box lỏng và làm giảm điểm ở
-ngưỡng IoU cao (mAP50-95). CP5 cho bạn thấy điều này bằng số.
+Nếu đem nhãn đó đi huấn luyện, mô hình bị dạy rằng chỗ đó là nền (Co-mining, AAAI 2021). Box lỏng dạy mô hình vẽ box
+lỏng và làm giảm điểm ở ngưỡng IoU cao (mAP50-95). CP5 cho bạn thấy điều này bằng số.
+
+Tên lỗi trong bài gần với cách chia lỗi của TIDE (ECCV 2020), công cụ phân tích lỗi của mô hình phát hiện vật thể:
+
+| Trong bài | Trong TIDE | Ghi chú |
+|---|---|---|
+| bỏ sót (FN) | Miss | |
+| thừa (FP) | Background / Duplicate | vẽ chỗ không có xe, hoặc 2 box cho 1 xe |
+| sai lớp | Classification | |
+| box lỏng, box chật/lệch | không có | quy ước riêng của bài: khớp ở IoU 0.5 nhưng IoU < 0.75. TIDE gọi "Localization" cho IoU 0.1–0.5, tức là box lệch tới mức không còn được tính là khớp |
+
+Nguồn: [sources.md](sources.md#lỗi-nhãn-và-ảnh-hưởng-lên-mô-hình).
