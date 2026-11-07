@@ -16,10 +16,14 @@ Tổng 240 phút. Làm theo thứ tự; mỗi checkpoint có sản phẩm riêng
 - **Mục tiêu:** đọc được một box ở cả hai định dạng và tính được độ trùng giữa hai box.
 - **Cần làm:** đọc [docs/concepts.md](docs/concepts.md); điền 3 hàm `TODO CP1` trong `src/cp1_box_math.py`;
   chạy `python src/cp1_box_math.py`.
-- **Sản phẩm:** `src/cp1_box_math.py` đã điền; mục CP1 trong báo cáo (1 dòng YOLO + 1 bbox COCO đổi ra điểm ảnh,
-  1 phép tính IoU viết tay).
+- **Sản phẩm:** `src/cp1_box_math.py` đã điền; mục CP1 trong báo cáo: chọn **1 box** trong
+  `src/data/model-predictions/yolo11n-predictions.json` (ảnh 640×640, tọa độ `xyxy`), tính tay ra `bbox` COCO và
+  dòng YOLO, đổi dòng YOLO ngược về `[x1, y1, x2, y2]`; 1 phép tính IoU viết tay.
+- **Lưu ý:** CP1 **chưa cần** `exports/` — tệp xuất chỉ có sau CP3. Phép đối chiếu YOLO ↔ COCO trên nhãn của chính
+  bạn làm ở bước tự kiểm tra của CP3.
 - **Cần hiểu:** YOLO chuẩn hóa theo kích thước ảnh và lấy **tâm**; COCO dùng điểm ảnh và lấy **góc trên-trái**.
-- **Tự kiểm tra:** cả 6 dòng in `OK`.
+- **Tự kiểm tra:** cả 6 dòng in `OK`; đổi ngược dòng YOLO tính tay ra đúng `xyxy` ban đầu (sai số làm tròn ≤ 1 điểm
+  ảnh).
 
 ## CP2 — Gán nhãn trong CVAT
 
@@ -39,7 +43,9 @@ Tổng 240 phút. Làm theo thứ tự; mỗi checkpoint có sản phẩm riêng
   CVAT và xuất lại tới khi `PASS`. **Commit + push** trước khi nhận nhãn tham chiếu.
 - **Sản phẩm:** 2 tệp ZIP, `outputs/v1/audit.json`, commit "lock v1".
 - **Cần hiểu:** YOLO **bỏ mất** thuộc tính; COCO giữ `occluded`, `truncated` trong `attributes`. Vì vậy nộp cả hai.
-- **Tự kiểm tra:** `audit` in `PASS`; đọc hết mọi dòng `CẢNH BÁO` và quyết định có sửa hay không.
+- **Tự kiểm tra:** `audit` in `PASS`; đọc hết mọi dòng `CẢNH BÁO` và quyết định có sửa hay không; lấy 1 xe, đổi
+  dòng YOLO trong `yolo-v1.zip` và `bbox` trong `coco-v1.zip` ra `[x1, y1, x2, y2]` (dùng hàm CP1) — hai kết quả
+  phải gần như trùng.
 
 ## CP4 — So với tham chiếu và sửa
 
