@@ -7,12 +7,12 @@
 ## Tên repo bài nộp
 
 ```text
-K4-L2-DAY02-HoVaTen-MSSV-ObjectDetection
+K5-L2-DAY02-HoVaTen-MSSV-ObjectDetection
 ```
 
-Học viên level 3 dùng `K4-L3-DAY02-HoVaTen-MSSV-ObjectDetection`. Lớp riêng thay `L2`/`L3` bằng `L2A`, `L2B`,
+Học viên level 3 dùng `K5-L3-DAY02-HoVaTen-MSSV-ObjectDetection`. Lớp riêng thay `L2`/`L3` bằng `L2A`, `L2B`,
 `L3A`, `L3B`. Không dấu, không khoảng trắng, ngăn cách bằng `-`.
-Ví dụ: `K4-L2-DAY02-NguyenVanAn-2A20260000-ObjectDetection`.
+Ví dụ: `K5-L2-DAY02-NguyenVanAn-2A20260000-ObjectDetection`.
 
 ## Cấu trúc phải nộp
 

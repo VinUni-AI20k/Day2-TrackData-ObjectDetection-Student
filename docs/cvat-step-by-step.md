@@ -9,10 +9,10 @@ Bài dùng CVAT `v2.82.0`. Ảnh chụp lấy từ `v2.74.1`; tên nút giữ ng
 
 ```json
 [
-  {"name": "car",   "attributes": [{"name": "truncated", "input_type": "checkbox", "mutable": false, "values": ["false"], "default_value": "false"}]},
-  {"name": "truck", "attributes": [{"name": "truncated", "input_type": "checkbox", "mutable": false, "values": ["false"], "default_value": "false"}]},
-  {"name": "bus",   "attributes": [{"name": "truncated", "input_type": "checkbox", "mutable": false, "values": ["false"], "default_value": "false"}]},
-  {"name": "van",   "attributes": [{"name": "truncated", "input_type": "checkbox", "mutable": false, "values": ["false"], "default_value": "false"}]}
+  {"name": "car",   "type": "rectangle", "attributes": [{"name": "truncated", "input_type": "checkbox", "mutable": false, "values": ["false"], "default_value": "false"}]},
+  {"name": "truck", "type": "rectangle", "attributes": [{"name": "truncated", "input_type": "checkbox", "mutable": false, "values": ["false"], "default_value": "false"}]},
+  {"name": "bus",   "type": "rectangle", "attributes": [{"name": "truncated", "input_type": "checkbox", "mutable": false, "values": ["false"], "default_value": "false"}]},
+  {"name": "van",   "type": "rectangle", "attributes": [{"name": "truncated", "input_type": "checkbox", "mutable": false, "values": ["false"], "default_value": "false"}]}
 ]
 ```
 
