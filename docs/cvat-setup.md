@@ -100,7 +100,12 @@ Tài liệu chính thức để xử lý lỗi cụ thể:
 
 ## 2. Tải và chạy CVAT
 
-Mở Ubuntu nếu dùng Windows; mở cửa sổ lệnh nếu dùng macOS hoặc Ubuntu. Chạy:
+Repo bài này **không** có Dockerfile hay `docker-compose.yml`, và bạn không cần build image. Lệnh `git clone` bên dưới
+tải mã nguồn CVAT về thư mục `cvat-day2`; tệp `docker-compose.yml` nằm trong thư mục đó và chỉ tải image CVAT dựng sẵn
+từ Docker Hub. Vì vậy mọi lệnh `docker compose` phải chạy **trong thư mục `cvat-day2`**. Chạy ở thư mục khác sẽ báo lỗi
+`no configuration file provided: not found`.
+
+Mở Ubuntu nếu dùng Windows; mở cửa sổ lệnh nếu dùng macOS hoặc Ubuntu.
 
 Chỉ với Mac Apple Silicon: chạy lệnh này trước, trong cùng cửa sổ lệnh. Nếu thiếu, `docker compose pull` báo lỗi
 `no matching manifest for linux/arm64/v8`. Mở cửa sổ lệnh mới thì chạy lại lệnh này trước mọi lệnh `docker compose`.
