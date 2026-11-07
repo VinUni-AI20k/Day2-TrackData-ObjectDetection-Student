@@ -20,16 +20,20 @@
 - Sát mép **phần nhìn thấy** của xe, kể cả gương nếu thấy rõ. Kiểm ở mức phóng 100%.
 - Không vẽ phần bị xe khác che khuất (không "đoán" hình dạng đầy đủ).
 - Xe chạm mép ảnh vẫn gán nếu đủ bằng chứng phân lớp; box dừng ở mép ảnh.
+- Nhiều xe đứng sát nhau: vẫn mỗi xe một box. Bài không dùng box nhóm (`iscrowd` của COCO).
 
 ## Thuộc tính
 
 | Thuộc tính | Cách đặt trong CVAT | Bật khi |
 |---|---|---|
-| `occluded` | nút "occluded" của box (phím tắt `Q`) | một phần xe bị vật khác che (xe khác, cột, cây, người) |
+| `occluded` | biểu tượng **occluded** của box trong danh sách Objects | một phần xe bị vật khác che (xe khác, cột, cây, người) |
 | `truncated` | checkbox của nhãn | xe bị **mép ảnh** cắt, phần còn lại nằm ngoài ảnh |
 
 Hai thuộc tính độc lập: một xe có thể vừa `occluded` vừa `truncated`. `audit` cảnh báo khi `truncated` không khớp với
 việc box chạm mép ảnh — đọc cảnh báo và tự quyết định.
+
+Bài dùng dạng đúng/sai giống Open Images và BDD100K. KITTI chia nhiều mức hơn (`occluded` 0–3, `truncated` 0–1);
+bài này không dùng mức. Nguồn: [sources.md](sources.md#định-nghĩa-thuộc-tính).
 
 ## Lỗi thường gặp
 

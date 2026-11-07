@@ -1,7 +1,8 @@
 # Cài CVAT trước buổi học
 
 Lab Coach (người hướng dẫn thực hành) dùng CVAT Community phiên bản `v2.74.1` để cả lớp có cùng giao diện và
-cách xuất dữ liệu. Bản mới nhất lúc soạn bài là `v2.82.0` nhưng chưa được thử với bài này — dùng `v2.74.1`.
+cách xuất dữ liệu. Bản mới nhất lúc soạn bài là `v2.82.0` (05/11/2026). Changelog không đổi cách xuất COCO/YOLO, nhưng bản này chưa
+được chạy thử với bài — dùng `v2.74.1`.
 Hoàn thành cài đặt trước buổi học.
 
 ## Kết quả cần có
@@ -44,7 +45,8 @@ Chỉ làm phần tương ứng với hệ điều hành của bạn. Không tr�
 ### macOS
 
 1. Chọn ** → About This Mac (Giới thiệu về máy Mac này)** và xem máy dùng Apple Silicon hay Intel.
-2. Tải đúng bản [Docker Desktop cho macOS](https://www.docker.com/products/docker-desktop/).
+2. Tải đúng bản [Docker Desktop cho macOS](https://www.docker.com/products/docker-desktop/). Với Apple Silicon:
+   CVAT chỉ có image `amd64`, nên Docker chạy qua giả lập — mở chậm hơn nhưng đủ cho 4 ảnh.
 3. Mở tệp `Docker.dmg`, kéo Docker vào **Applications (Ứng dụng)** rồi mở Docker.
 4. Chọn **Use recommended settings (Dùng thiết lập được khuyên dùng)** và chờ Docker chạy xong.
 5. Mở **Terminal (Cửa sổ lệnh)** và chạy:
@@ -142,6 +144,17 @@ docker compose stop
 ```
 
 Không chạy `docker compose down -v`; tùy chọn `-v` có thể xóa tác vụ và nhãn đã lưu.
+
+## Không chạy được CVAT trên máy: dùng CVAT Online
+
+Chỉ dùng khi Lab Coach đồng ý, vì CVAT Online chạy bản mới nhất, không phải `v2.74.1`.
+
+1. Mở <https://app.cvat.ai> và tạo tài khoản bằng email cá nhân của bạn.
+2. Làm theo [cvat-step-by-step.md](cvat-step-by-step.md) như bình thường: **1 project, 1 task chứa cả 4 ảnh**.
+   Gói Free cho tối đa 1 project, 3 task, 1 GB.
+3. Xuất với **Save images tắt** (bài chỉ cần nhãn).
+
+Kết quả: lệnh `audit` vẫn chạy được với tệp xuất từ CVAT Online.
 
 ## Khi cần hỗ trợ
 

@@ -62,3 +62,8 @@ Giải thích (3–5 câu, chỉ ra ít nhất 1 box cụ thể): ...
 ## Công cụ AI đã dùng
 
 ...
+
+## Phiếu 1 phút (không chấm điểm)
+
+- Điều rõ nhất hôm nay:
+- Điều còn rối nhất:
