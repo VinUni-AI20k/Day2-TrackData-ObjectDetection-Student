@@ -1,6 +1,6 @@
 # CVAT từng bước (CP2–CP3)
 
-Ảnh chụp từ CVAT `v2.74.1`. Bản khác có thể đặt nút ở chỗ hơi khác nhưng tên giữ nguyên.
+Bài dùng CVAT `v2.82.0`. Ảnh chụp lấy từ `v2.74.1`; tên nút giữ nguyên, vị trí có thể hơi khác.
 
 ## 1. Tạo project và nhãn
 
