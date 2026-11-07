@@ -1,7 +1,8 @@
-# Cài CVAT trên máy cá nhân trước buổi học
+# Cài CVAT trước buổi học
 
 Lab Coach (người hướng dẫn thực hành) dùng CVAT Community phiên bản `v2.74.1` để cả lớp có cùng giao diện và
-cách xuất dữ liệu. Hoàn thành cài đặt trước buổi học bốn giờ.
+cách xuất dữ liệu. Bản mới nhất lúc soạn bài là `v2.82.0` nhưng chưa được thử với bài này — dùng `v2.74.1`.
+Hoàn thành cài đặt trước buổi học.
 
 ## Kết quả cần có
 

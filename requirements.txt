@@ -1,2 +1,0 @@
-ultralytics==8.4.145
-certifi==2026.6.17

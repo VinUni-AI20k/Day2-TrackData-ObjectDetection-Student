@@ -21,7 +21,8 @@ phải được sử dụng theo quy định của lớp.
 
 ## Ultralytics
 
-Sổ thực hành ghim `ultralytics==8.4.145` và kiểm mã SHA-256 của `yolo11n.pt`. Ultralytics công bố phần mềm và
+`src/data/model-predictions/yolo11n-predictions.json` là kết quả chạy sẵn `yolo11n.pt` với `ultralytics==8.4.145`
+trên bốn ảnh. Kho chỉ chứa tọa độ hộp và điểm tin cậy, không chứa trọng số mô hình. Ultralytics công bố phần mềm và
 mô hình cộng đồng theo AGPL-3.0, đồng thời có điều khoản doanh nghiệp. Kho mã giảng dạy này không cấp thêm quyền
 triển khai mô hình với dữ liệu sở hữu riêng.
 
@@ -32,5 +33,5 @@ triển khai mô hình với dữ liệu sở hữu riêng.
 ## Phạm vi phát hành
 
 Kho mã chưa có giấy phép tổng thể và đang để riêng tư. Không phát hành rộng kho mã, ảnh, nhãn đã tạo hoặc kết quả
-mô hình trước khi chủ sở hữu chương trình xác nhận quyền phân phối. Không đưa gói xuất thô, nhãn tham chiếu, trọng
-số mô hình, mật khẩu hoặc mã truy cập vào bài nộp.
+mô hình trước khi chủ sở hữu chương trình xác nhận quyền phân phối. Không đưa nhãn tham chiếu, trọng
+số mô hình, mật khẩu hoặc mã truy cập vào bài nộp. Bài nộp chỉ gồm bản xuất nhãn của chính học viên (không kèm ảnh).

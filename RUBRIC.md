@@ -1,27 +1,27 @@
-# Tiêu chí đánh giá — Ngày 2
+# Rubric
 
-Đây là tiêu chí phản hồi quá trình học, không có một ngưỡng IoU hoặc mAP duy nhất để quyết định đạt hay không đạt.
+Điểm chính 100. Bonus ghi riêng, tối đa 10. Mỗi tiêu chí chấm theo bằng chứng có trong repo nộp.
 
-| Năng lực | Minh chứng rõ | Cần bổ sung | Chưa chứng minh |
-| --- | --- | --- | --- |
-| Áp dụng bốn lớp | phân biệt `car/truck/bus/van` bằng dấu hiệu nhìn thấy và quy tắc | lớp hợp lý nhưng giải thích còn mơ hồ | đoán theo màu/kích thước hoặc tự đổi mã lớp |
-| Phạm vi và độ đầy đủ | rà cả bốn ảnh, có kiểm vật thể thiếu/trùng | còn điểm chưa kiểm | bỏ bước tự kiểm tra hoặc gộp nhiều xe |
-| Hình học và thuộc tính | hộp sát phần nhìn thấy, đủ ba thuộc tính trong gói CVAT | còn hộp/thuộc tính cần sửa | hộp lỏng, đoán phần khuất hoặc cho rằng YOLO giữ thuộc tính |
-| Tình huống mơ hồ | ba tình huống có vật thể, minh chứng, quy tắc và quyết định | đủ tình huống nhưng thiếu minh chứng | chép đáp án hoặc quyết định không có quy tắc |
-| Dòng nhãn YOLO | đọc đúng năm trường và đổi được sang tọa độ điểm ảnh | đọc được nhưng chưa giải thích giới hạn | cho rằng đúng định dạng nghĩa là nhãn đúng |
-| Huấn luyện thử | lưu cấu hình, ảnh dự đoán và diễn giải thận trọng | có kết quả nhưng chưa nối với câu hỏi dữ liệu | dùng mAP để chấm người hoặc tuyên bố khả năng dùng thực tế |
-| Đối chiếu | báo riêng IoU, đồng thuận lớp, hộp không ghép và sửa một điểm khác biệt | có số đo nhưng chưa nối với quy tắc | dùng IoU trung bình để xếp hạng ai đúng |
-| Khả năng tái lập và an toàn | đủ mã kiểm, hai gói xuất và tệp bắt buộc; không lộ dữ liệu cấm | thiếu tệp có thể bổ sung | thay ảnh, lớp hoặc phiên bản; hoặc đưa dữ liệu cấm vào kho mã |
+| Tiêu chí | Điểm | Bằng chứng | Mất điểm khi |
+|---|---:|---|---|
+| C1 — Box, IoU, tọa độ (CP1) | 15 | `src/cp1_box_math.py` chạy ra 6 dòng `OK`; mục CP1 trong báo cáo có phép tính tay | hàm còn `TODO`; phép tính tay sai hoặc chép từ máy mà không giải thích |
+| C2 — Chất lượng nhãn v1 (CP2) | 25 | `exports/coco-v1.zip`; overlay v1; mục CP2 trong báo cáo | thiếu ảnh; dùng lớp ngoài 4 lớp; box gộp nhiều xe; nhiều box lỏng hoặc bỏ sót xe nhìn rõ; `occluded`/`truncated` gắn tùy tiện |
+| C3 — Xuất đúng định dạng và khóa bài (CP3) | 20 | `exports/coco-v1.zip`, `exports/yolo-v1.zip`, `outputs/v1/audit.json` = `pass`; commit v1 trước giờ phát tham chiếu | thiếu một định dạng; audit `fail`; hai bản xuất khác trạng thái; sửa v1 sau khi nhận tham chiếu |
+| C4 — Phân tích lỗi và sửa (CP4) | 25 | `outputs/v1/`, `outputs/v2/`; bảng trước/sau và 3 lỗi có nguyên nhân + quy tắc | chỉ chép số; lỗi không truy được về dòng trong `compare-rows.csv`; sửa cho khớp tham chiếu mà không lý giải |
+| C5 — Nhãn ảnh hưởng mô hình (CP5) | 10 | bảng `model-check` 3 dòng + giải thích trong báo cáo | không chỉ ra được box cụ thể; kết luận "mô hình tệ/tốt" mà bỏ qua nhãn |
+| C6 — Đúng quy ước nộp bài | 5 | tên repo, tên báo cáo, cấu trúc theo `SUBMISSION.md` | sai tên; thiếu tệp; commit secret hoặc dữ liệu ngoài bài |
+| **Tổng điểm chính** | **100** | | |
 
-## Minh chứng tối thiểu
+## Bonus (tối đa 10)
 
-- Bài CVAT gồm đúng bốn ảnh và số vật thể thực tế; 40–60 là mục tiêu khối lượng, không phải điểm cắt.
-- Hai kết quả kiểm tra từ cùng một công việc: YOLO và CVAT gốc.
-- Phiếu quy tắc có định nghĩa lớp và ba tình huống mơ hồ hoàn chỉnh.
-- Thông tin lần huấn luyện và một ảnh dự đoán.
-- Kết quả đối chiếu độc lập với bạn cùng cặp hoặc bộ tham chiếu.
-- Báo cáo giải thích vì sao đồng thuận không đồng nghĩa với đúng và vì sao số đo mô hình không chấm người.
+| Tiêu chí | Điểm | Bằng chứng |
+|---|---:|---|
+| B1 — Chạy lại `compare` ở `--iou 0.75`, giải thích vì sao precision/recall đổi | 4 | `outputs/v2-iou075/` + 3–5 câu |
+| B2 — Đề xuất 1 quy tắc gán nhãn mới cho một ca mơ hồ, có ảnh minh họa và lý do | 3 | mục Bonus trong báo cáo |
+| B3 — Tự chạy YOLO11n trên 4 ảnh (Colab/máy) và so với dự đoán dựng sẵn | 3 | notebook/lệnh + bảng so sánh |
 
-Nếu thiếu minh chứng do công cụ gặp lỗi, ghi đúng tình trạng và thông báo Lab Coach (người hướng dẫn thực hành).
-Không tạo tệp rỗng, dòng
-nhãn giả hoặc sửa trực tiếp gói xuất để vượt kiểm tra.
+## Quy tắc chấm
+
+- Precision/recall của bạn **không** quy đổi thẳng ra điểm. Coach chấm cách bạn đọc và sửa lỗi.
+- Không có điểm cho việc khớp tham chiếu 100%. Giữ một quyết định khác tham chiếu vẫn được điểm nếu có bằng chứng.
+- Nộp muộn bị trừ theo `RULES.md`.
